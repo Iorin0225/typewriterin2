@@ -1,2 +1,50 @@
-<h1>Typewriter#index</h1>
-<p>Find me in app/views/typewriter/index.html.erb</p>
+<div class="typewriterin" v-bind:style="backgroundStyle">
+  <div class="typewriterin__header">
+    <div class="typewriterin__header__logo" v-bind:style="logoStyle">
+      TYPEWRITERIN
+    </div>
+  </div>
+  <div class="typewriterin__textarea" v-on:mousemove="flashTextArea()">
+    <textarea v-bind:style="editorStyle" placeholder="Type anything!"></textarea>
+  </div>
+  <div class="typewriterin__footer" v-on:mouseover="toggleConfigButtons(true)" v-on:mouseleave="toggleConfigButtons(false)">
+    <div class="typewriterin__footer__config-button-wrapper icon-button">
+      <button class="typewriterin__footer__config-button" v-on:click="toggleConfigPanel(true)" v-bind:style="iconStyle">
+        <i class='fas fa-cog fa-3x'></i>
+      </button>
+    </div>
+  </div>
+  <div class="typewriterin__config">
+    <div class="typewriterin__config__panel" v-bind:style="configPanelStyle">
+      <div class="typewriterin__config__panel__row" v-bind:style="configBorderColorStyle">
+        <label for="typewriterin-font-family">FONT-FAMILY: </label>
+        <div class="input-wrapper">
+          <input type="text" name='typewriterin-font-family' :value="editorFontFamily" v-bind:style="configPanelInputStyle" />
+        </div>
+      </div>
+      <div class="typewriterin__config__panel__row" v-bind:style="configBorderColorStyle">
+        <label for="typewriterin-font-size">FONT-SIZE: </label>
+        <div class="input-wrapper">
+          <input type="text" name='typewriterin-font-size' :value="editorFontSize" v-bind:style="configPanelInputStyle" />
+        </div>
+      </div>
+      <div class="typewriterin__config__panel__row" v-bind:style="configBorderColorStyle">
+        <label for="typewriterin-font-color">FONT-COLOR: </label>
+        <div class="input-wrapper">
+          <input type="text" name='typewriterin-font-color' :value="editorFontColor" v-bind:style="configPanelInputStyle" />
+        </div>
+      </div>
+      <div class="typewriterin__config__panel__row" v-bind:style="configBorderColorStyle">
+        <label for="typewriterin-background-color">BACKGROUND-COLOR: </label>
+        <div class="input-wrapper">
+          <input type="text" name='typewriterin-background-color' :value="editorBackGround" v-bind:style="configPanelInputStyle" />
+        </div>
+      </div>
+      <div class="typewriterin__config__panel__close-button-wrapper icon-button">
+        <button class="typewriterin__config__panel__close-button" v-on:click="toggleConfigPanel(false); updateConfig(); saveConfig();" v-bind:style="iconStyle">
+          <i class='fas fa-times fa-3x'></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
