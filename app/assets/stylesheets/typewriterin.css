@@ -1,3 +1,20 @@
+body {
+  overscroll-behavior: none;
+}
+
+/* Chrome version 29 and above */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+and (min-resolution:.001dpcm) {
+  ::-webkit-scrollbar {
+      width: 10px;
+      height: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: #aaa;
+  }
+}
 .typewriterin {
   top: 0;
   left: 0;

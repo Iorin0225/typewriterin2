@@ -1,47 +1,48 @@
-<div class="typewriterin" v-bind:style="backgroundStyle">
+<div class="typewriterin" data-controller="background" data-action="config-panel:updateConfig@window->background#loadConfig">
   <div class="typewriterin__header">
-    <div class="typewriterin__header__logo" v-bind:style="logoStyle">
+    <div class="typewriterin__header__logo" data-controller="title" data-action="config-panel:updateConfig@window->title#loadConfig">
       TYPEWRITERIN
     </div>
   </div>
-  <div class="typewriterin__textarea" v-on:mousemove="flashTextArea()">
-    <textarea v-bind:style="editorStyle" placeholder="Type anything!"></textarea>
+  <div class="typewriterin__textarea" data-controller="editor" data-action="click->editor#twinkling config-panel:updateConfig@window->editor#loadConfig">
+    <textarea placeholder="Type anything!"></textarea>
   </div>
-  <div class="typewriterin__footer" v-on:mouseover="toggleConfigButtons(true)" v-on:mouseleave="toggleConfigButtons(false)">
+  <div class="typewriterin__footer" data-controller="config-buttons" data-action="mouseover->config-buttons#show mouseleave->config-buttons#hide config-panel:updateConfig@window->config-buttons#loadConfig">
     <div class="typewriterin__footer__config-button-wrapper icon-button">
-      <button class="typewriterin__footer__config-button" v-on:click="toggleConfigPanel(true)" v-bind:style="iconStyle">
+      <button class="typewriterin__footer__config-button" data-action="click->config-buttons#callConfigPanel">
         <i class='fas fa-cog fa-3x'></i>
       </button>
     </div>
   </div>
-  <div class="typewriterin__config">
-    <div class="typewriterin__config__panel" v-bind:style="configPanelStyle">
-      <div class="typewriterin__config__panel__row" v-bind:style="configBorderColorStyle">
+
+  <div class="typewriterin__config" data-controller="config-panel" data-action="config-buttons:callConfigPanel@window->config-panel#show">
+    <div class="typewriterin__config__panel">
+      <div class="typewriterin__config__panel__row">
         <label for="typewriterin-font-family">FONT-FAMILY: </label>
         <div class="input-wrapper">
-          <input type="text" name='typewriterin-font-family' :value="editorFontFamily" v-bind:style="configPanelInputStyle" />
+          <input type="text" name='typewriterin-font-family' data-config-panel-target="editorFontFamily" :value="editorFontFamily" />
         </div>
       </div>
-      <div class="typewriterin__config__panel__row" v-bind:style="configBorderColorStyle">
+      <div class="typewriterin__config__panel__row">
         <label for="typewriterin-font-size">FONT-SIZE: </label>
         <div class="input-wrapper">
-          <input type="text" name='typewriterin-font-size' :value="editorFontSize" v-bind:style="configPanelInputStyle" />
+          <input type="text" name='typewriterin-font-size' data-config-panel-target="editorFontSize" :value="editorFontSize" />
         </div>
       </div>
-      <div class="typewriterin__config__panel__row" v-bind:style="configBorderColorStyle">
+      <div class="typewriterin__config__panel__row">
         <label for="typewriterin-font-color">FONT-COLOR: </label>
         <div class="input-wrapper">
-          <input type="text" name='typewriterin-font-color' :value="editorFontColor" v-bind:style="configPanelInputStyle" />
+          <input type="text" name='typewriterin-font-color' data-config-panel-target="editorFontColor" :value="editorFontColor" />
         </div>
       </div>
-      <div class="typewriterin__config__panel__row" v-bind:style="configBorderColorStyle">
+      <div class="typewriterin__config__panel__row">
         <label for="typewriterin-background-color">BACKGROUND-COLOR: </label>
         <div class="input-wrapper">
-          <input type="text" name='typewriterin-background-color' :value="editorBackGround" v-bind:style="configPanelInputStyle" />
+          <input type="text" name='typewriterin-background-color' data-config-panel-target="editorBackGround" :value="editorBackGround" />
         </div>
       </div>
       <div class="typewriterin__config__panel__close-button-wrapper icon-button">
-        <button class="typewriterin__config__panel__close-button" v-on:click="toggleConfigPanel(false); updateConfig(); saveConfig();" v-bind:style="iconStyle">
+        <button class="typewriterin__config__panel__close-button" data-action="click->config-panel#hide">
           <i class='fas fa-times fa-3x'></i>
         </button>
       </div>
