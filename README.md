@@ -1,24 +1,33 @@
+This follows [Typewriterin](https://github.com/Iorin0225/typewriterin), updating structure in order to follow #NoBuild.
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TypeWriterin is the web-based text editor which is the best for writers who focuses to writing text.
 
-Things you may want to cover:
+## Motivation
 
-* Ruby version
+""Simple, Light, and Focused.""
 
-* System dependencies
+There are a lot of text editors and most of them have many features, that is good for programmer, blogger, newseriter, or who wants a rich editor.
 
-* Configuration
+However, the features can be annoying for writers because they're many motions like suggestion, auto-correct, etc... If we want to focus, we should decrease moving things in our sight.
 
-* Database creation
+So TypeWriterin has no move other than what you're writing. All features focus to keeping your concentration high to write text.
 
-* Database initialization
+Inspired by OmmWriter.
 
-* How to run the test suite
+## The Plan
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Awesome Background
+- Texteditor at center
+- Animate
+- Text Count
+- Export as .txt (optional)
+- Markdown support (optional)
+- Config
+    + Font
+    + Text and background by color_code
+    + SE for typing
+    + ON/OFF animate
+    + Background photo (optional)
+- Store setting
