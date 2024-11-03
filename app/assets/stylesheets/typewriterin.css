@@ -44,7 +44,7 @@ and (min-resolution:.001dpcm) {
     padding: 2rem;
     width: 50vw;
     min-width: 10rem;
-    border: 1px dotted #666;
+    outline: 1px dotted #666;
 
     textarea {
       display: block;

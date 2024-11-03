@@ -30,11 +30,11 @@ export default class extends Controller {
   }
 
   async twinkling() {
-    this.element.style.border = '1px dotted #666'
+    this.element.style.outline = '1px dotted #666'
 
     TweenMax.to(this.element, 0.5, {
       delay: 1,
-      border: 'none',
+      outline: 'none',
     });
   }
 
