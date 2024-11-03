@@ -1,11 +1,12 @@
 <div class="typewriterin" data-controller="background" data-action="config-panel:updateConfig@window->background#loadConfig">
   <div class="typewriterin__header">
     <div class="typewriterin__header__logo" data-controller="title" data-action="config-panel:updateConfig@window->title#loadConfig">
-      TYPEWRITERIN
+      TYPEWRITERIN 2
     </div>
   </div>
   <div class="typewriterin__textarea" data-controller="editor" data-action="click->editor#twinkling config-panel:updateConfig@window->editor#loadConfig">
-    <textarea placeholder="Type anything!"></textarea>
+    <textarea placeholder="Type anything!" data-editor-target="textarea" data-action="input->editor#type">
+    </textarea>
   </div>
   <div class="typewriterin__footer" data-controller="config-buttons" data-action="mouseover->config-buttons#show mouseleave->config-buttons#hide config-panel:updateConfig@window->config-buttons#loadConfig">
     <div class="typewriterin__footer__config-button-wrapper icon-button">
